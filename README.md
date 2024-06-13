@@ -56,4 +56,5 @@ The script will output the mean absolute error (MAE) for the user-based and item
 This project is licensed under the MIT License. See the LICENSE file for details.**Acknowledgments**
 -----------------
 
-The MovieLens dataset was provided by GroupLens Research at the University of Minnesota.
+The MovieLens dataset was provided by GroupLens Research at the University of Minnesota. 
+https://grouplens.org/datasets/movielens/100k/
