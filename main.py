@@ -9,23 +9,23 @@ with zipfile.ZipFile('C:/Users/mayan/Pandas-Demo/ml-100k.zip', 'r') as zip_ref:
 
 #reading data_set
 u_cols = ['user_id', 'age', 'sex', 'occupation', 'zip_code']
-users = pd.read_csv('C:/Users/mayan/Pandas-Demo/ml-100k/u.user', sep='|', names=u_cols,encoding='latin-1')
+users = pd.read_csv('ml-100k/u.user', sep='|', names=u_cols,encoding='latin-1')
 
 #reading ratings for all movies
 r_cols = ['users_id', 'movie_id', 'rating', 'unix_timestamp']
-ratings = pd.read_csv('C:/Users/mayan/Pandas-Demo/ml-100k/u.data', sep='\t', names=r_cols,encoding='latin-1')
+ratings = pd.read_csv('ml-100k/u.data', sep='\t', names=r_cols,encoding='latin-1')
 ratings[['users_id', 'movie_id']] = ratings[['users_id', 'movie_id']].astype(int)
 #reading items file
 i_cols=['movie_id', 'movie_title', 'release date', 'video release date', 'IMDb url', 'unknown', 
         'Action', 'Adventure', 'Animation', 'Children\'s', 'Comedy', 'Crime',
         'Documentary', 'Drama', 'Fantasy', 'Film-Noir', 'Horror', 'Musical', 'Mystery',
         'Romance', 'Sci-Fi', 'Thriller', 'War', 'Western']
-items = pd.read_csv('C:/Users/mayan/Pandas-Demo/ml-100k/u.item', sep = '|', names=i_cols,encoding='latin-1')
+items = pd.read_csv('ml-100k/u.item', sep = '|', names=i_cols,encoding='latin-1')
 
 #training and testing the dataset
 
-ratings_train = pd.read_csv('C:/Users/mayan/Pandas-Demo/ml-100k/ua.base', sep='\t', names=r_cols, encoding='latin-1')
-ratings_test = pd.read_csv('C:/Users/mayan/Pandas-Demo/ml-100k/ua.test', sep='\t', names=r_cols, encoding='latin-1')
+ratings_train = pd.read_csv('ml-100k/ua.base', sep='\t', names=r_cols, encoding='latin-1')
+ratings_test = pd.read_csv('ml-100k/ua.test', sep='\t', names=r_cols, encoding='latin-1')
 
 #number of unique users
 n_users = ratings.users_id.unique().shape[0]
